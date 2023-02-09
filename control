@@ -1,0 +1,9 @@
+Package: gay.rooot.ios.ctp
+Name: catppuccin
+Version: 0.0.2
+Architecture: iphoneos-arm
+Description: Catppuccin for iOS! (hopefully) (maybe)
+Maintainer: rooot
+Author: rooot
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.3)
