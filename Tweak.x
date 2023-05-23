@@ -47,6 +47,13 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 */
 
 %hook UIColor
+/*+ (id)_systemChromeShadowColor {
+    if (enabled) {
+        return UIColorFromRGB(ctest);
+    } else {
+        return %orig;
+    }
+}*/
 
 + (id)blackColor {
     NSLog(@"[ctp] %@", NSStringFromSelector(_cmd));
@@ -181,9 +188,13 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
     NSLog(@"[ctp] %@", NSStringFromSelector(_cmd));
     return %orig;
 }
+// onenote?
 + (id)secondarySystemBackgroundColor {
-    NSLog(@"[ctp] %@", NSStringFromSelector(_cmd));
-    return %orig;
+    if (enabled) {
+        return UIColorFromRGB(color_base);
+    } else {
+        return %orig;
+    }
 }
 + (id)secondarySystemFillColor {
     NSLog(@"[ctp] %@", NSStringFromSelector(_cmd));
