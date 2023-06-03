@@ -40,17 +40,14 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 }*/
 
 + (id)blackColor {
-
     return %orig;
 }
 
 + (id)blueColor {
-
     return %orig;
 }
 
 + (id)brownColor {
-
     return %orig;
 }
 //+ (id)clearColor {
@@ -58,532 +55,404 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 //    return %orig;
 //}
 + (id)cyanColor {
-
     return %orig;
 }
 + (id)darkGrayColor {
-
     return %orig;
 }
 + (id)darkTextColor {
-
     return %orig;
 }
 + (id)externalSystemGreenColor {
-
     return %orig;
 }
 + (id)externalSystemRedColor {
-
     return %orig;
 }
 + (id)externalSystemTealColor {
-
     return %orig;
 }
 + (id)grayColor {
-
     return %orig;
 }
 + (id)greenColor {
-
     return %orig;
 }
 + (id)groupTableViewBackgroundColor { return UIColorFromRGB(color_base); }
 + (id)infoTextOverPinStripeTextColor {
-
     return %orig;
 }
 + (id)insertionPointColor {
-
     return %orig;
 }
 + (id)keyboardFocusIndicatorColor {
-
     return %orig;
 }
 + (id)lightGrayColor {
-
     return %orig;
 }
 + (id)lightTextColor {
-
     return %orig;
 }
 + (id)linkColor {
-
     return %orig;
 }
 + (id)magentaColor {
-
     return %orig;
 }
 + (id)noContentDarkGradientBackgroundColor {
-
     return %orig;
 }
 + (id)noContentLightGradientBackgroundColor {
-
     return %orig;
 }
 + (id)opaqueSeparatorColor { //appears to be the color for vertical seperator lines
-
     return %orig;
 }
 + (id)orangeColor {
-
     return %orig;
 }
 + (id)pinStripeColor {
-
     return %orig;
 }
 + (id)placeholderTextColor {
-
     return %orig;
 }
 + (id)purpleColor {
-
     return %orig;
 }
 + (id)quaternaryLabelColor {
-
     return %orig;
 }
 + (id)quaternarySystemFillColor {
-
     return %orig;
 }
 + (id)redColor {
-
     return %orig;
 }
 + (id)scrollViewTexturedBackgroundColor {
-
     return %orig;
 }
 + (id)secondaryLabelColor {
-
     return %orig;
 }
 + (id)secondarySystemBackgroundColor { return UIColorFromRGB(color_base); }
 + (id)secondarySystemFillColor {
-
     return %orig;
 }
 + (id)secondarySystemGroupedBackgroundColor {
-
     return %orig;
 }
 + (id)sectionHeaderBackgroundColor {
-
     return %orig;
 }
 + (id)sectionHeaderBorderColor {
-
     return %orig;
 }
 + (id)sectionHeaderOpaqueBackgroundColor {
-
     return %orig;
 }
 + (id)sectionListBorderColor {
-
     return %orig;
 }
 + (id)selectionGrabberColor {
-
     return %orig;
 }
 + (id)selectionHighlightColor {
-
     return %orig;
 }
 + (id)separatorColor {
-
     return %orig;
 }
 + (id)systemBlackColor {
-
     return %orig;
 }
 + (id)systemBrownColor {
-
     return %orig;
 }
 + (id)systemDarkBlueColor {
-
     return %orig;
 }
 + (id)systemDarkExtraLightGrayColor {
-
     return %orig;
 }
 + (id)systemDarkExtraLightGrayTintColor {
-
     return %orig;
 }
 + (id)systemDarkGrayColor {
-
     return %orig;
 }
 + (id)systemDarkGrayTintColor {
-
     return %orig;
 }
 + (id)systemDarkGreenColor {
-
     return %orig;
 }
 + (id)systemDarkLightGrayColor {
-
     return %orig;
 }
 + (id)systemDarkLightGrayTintColor {
-
     return %orig;
 }
 + (id)systemDarkLightMidGrayColor {
-
     return %orig;
 }
 + (id)systemDarkLightMidGrayTintColor {
-
     return %orig;
 }
 + (id)systemDarkMidGrayColor {
-
     return %orig;
 }
 + (id)systemDarkMidGrayTintColor {
-
     return %orig;
 }
 + (id)systemDarkOrangeColor {
-
     return %orig;
 }
 + (id)systemDarkPinkColor {
-
     return %orig;
 }
 + (id)systemDarkPurpleColor {
-
     return %orig;
 }
 + (id)systemDarkRedColor {
-
     return %orig;
 }
 + (id)systemDarkTealColor {
-
     return %orig;
 }
 + (id)systemExtraLightGrayColor {
-
     return %orig;
 }
 + (id)systemExtraLightGrayTintColor {
-
     return %orig;
 }
 + (id)systemFillColor {
-
     return %orig;
 }
 + (id)systemGray2Color {
-
     return %orig;
 }
 + (id)systemGray3Color {
-
     return %orig;
 }
 + (id)systemGray4Color {
-
     return %orig;
 }
 // seems to be the color that appears when you hold down a button (not released though)
 + (id)systemGray5Color {
-
     return %orig;
 }
 + (id)systemGray6Color {
-
     return %orig;
 }
 + (id)systemGrayColor {
-
     return %orig;
 }
 + (id)systemGrayTintColor {
-
     return %orig;
 }
 + (id)systemGroupedBackgroundColor { return UIColorFromRGB(color_base); }
 + (id)systemIndigoColor {
-
     return %orig;
 }
 + (id)systemLightGrayColor {
-
     return %orig;
 }
 + (id)systemLightGrayTintColor {
-
     return %orig;
 }
 + (id)systemLightMidGrayColor {
-
     return %orig;
 }
 + (id)systemLightMidGrayTintColor {
-
     return %orig;
 }
 + (id)systemMidGrayColor {
-
     return %orig;
 }
 + (id)systemMidGrayTintColor {
-
     return %orig;
 }
 + (id)systemOrangeColor { return UIColorFromRGB(color_peach); }
 + (id)systemPinkColor {
-
     return %orig;
 }
 + (id)systemPurpleColor {
-
     return %orig;
 }
 + (id)systemTealColor {
-
     return %orig;
 }
 + (id)systemWhiteColor { return UIColorFromRGB(color_base); }
 // used in TrollStore for example
 + (id)tableBackgroundColor { return UIColorFromRGB(color_base); }
 + (id)tableCellBackgroundColor {
-
     return %orig;
 }
 + (id)tableCellBlueTextColor {
-
     return %orig;
 }
 + (id)tableCellDefaultSelectionTintColor {
-
     return %orig;
 }
 + (id)tableCellDisabledBackgroundColor {
-
     return %orig;
 }
 + (id)tableCellFocusedBackgroundColor {
-
     return %orig;
 }
 + (id)tableCellGrayTextColor {
-
     return %orig;
 }
 + (id)tableCellGroupedBackgroundColor { return UIColorFromRGB(color_mantle); }
 + (id)tableCellGroupedBackgroundColorLegacyWhite {
-
     return %orig;
 }
 + (id)tableCellGroupedSelectedBackgroundColor {
-
     return %orig;
 }
 + (id)tableCellHighlightedBackgroundColor {
-
     return %orig;
 }
 // used in trollstore (app list bg)
 + (id)tableCellPlainBackgroundColor { return UIColorFromRGB(color_base); }
 + (id)tableCellPlainSelectedBackgroundColor { return UIColorFromRGB(color_accent); }
 + (id)tableCellValue1BlueColor {
-
     return %orig;
 }
 + (id)tableCellValue2BlueColor {
-
     return %orig;
 }
 + (id)tableCellbackgroundColorCarPlay {
-
     return %orig;
 }
 + (id)tableGroupedSeparatorLightColor {
-
     return %orig;
 }
 + (id)tableGroupedTopShadowColor {
-
     return %orig;
 }
 + (id)tablePlainHeaderFooterBackgroundColor {
-
     return %orig;
 }
 + (id)tablePlainHeaderFooterFloatingBackgroundColor {
-
     return %orig;
 }
 + (id)tableSelectionColor {
-
     return %orig;
 }
 + (id)tableSelectionGradientEndColor {
-
     return %orig;
 }
 + (id)tableSelectionGradientStartColor {
-
     return %orig;
 }
 + (id)tableSeparatorColor {
-
     return %orig;
 }
 + (id)tableSeparatorDarkColor {
-
     return %orig;
 }//aa
 + (id)tableSeparatorLightColor {
-
     return %orig;
 }
 + (id)tableShadowColor {
-
     return %orig;
 }
 + (id)tertiaryLabelColor { //outlines for icons in settings app, might be more
-
     return %orig;
 }
 + (id)tertiarySystemBackgroundColor { // note
-
     return %orig;
 }
 // seems to be textbox backgrounds, crust or mantle it is
 + (id)tertiarySystemFillColor { return UIColorFromRGB(color_mantle); }
 + (id)tertiarySystemGroupedBackgroundColor {
-
     return %orig;
 }
 + (id)textFieldAtomBlueColor {
-
     return %orig;
 }
 + (id)textFieldAtomPurpleColor {
-
     return %orig;
 }
 + (id)underPageBackgroundColor {
-
     return %orig;
 }
 + (id)viewFlipsideBackgroundColor {
-
     return %orig;
 }
 + (id)whiteColor {
-
     return %orig;
 }
 + (id)yellowColor {
-
     return %orig;
 }
 + (id)pk_buttonImageColor {
-
     return %orig;
 }
 + (id)pk_crosshairViewBorderColor {
-
     return %orig;
 }
 + (id)pk_crosshairViewShadowColor {
-
     return %orig;
 }
 + (id)pk_doneButtonBackgroundColor {
-
     return %orig;
 }
 + (id)pk_doneButtonTitleColor {
-
     return %orig;
 }
 + (id)pk_linedPaperLineColor_dark {
-
     return %orig;
 }
 + (id)pk_linedPaperLineColor_light {
-
     return %orig;
 }
 + (id)pk_paletteBackgroundColor {
-
     return %orig;
 }
 + (id)pk_paletteButtonBackgroundColor {
-
     return %orig;
 }
 + (id)pk_paletteShadowColor {
-
     return %orig;
 }
 + (id)pk_paletteStrokeColor {
-
     return %orig;
 }
 + (id)pk_removeActiveToolButtonColor {
-
     return %orig;
 }
 + (id)pk_selectedPickerButtonBackgroundColor {
-
     return %orig;
 }
 + (id)pk_selectedPickerButtonMaskColor {
-
     return %orig;
 }
 + (id)pk_separatorLineColor {
-
     return %orig;
 }
 + (id)pk_textInputDeletionPreviewColor {
-
     return %orig;
 }
 + (id)pk_textInputReserveSpaceColor {
-
     return %orig;
 }
 + (id)pk_toolDockMaskColor {
-
     return %orig;
 }
 + (id)pk_toolSampleViewBackgroundColor {
-
     return %orig;
 }
 + (id)pk_toolTintColor {
-
     return %orig;
 }
 + (id)labelColor { return UIColorFromRGB(color_text); }
 + (id)systemBackgroundColor { return UIColorFromRGB(color_base); }
 + (id)systemBlueColor { return UIColorFromRGB(color_blue); }
 + (id)systemDarkYellowColor {
-
     return %orig;
 }
 + (id)systemGreenColor { return UIColorFromRGB(color_green); }
