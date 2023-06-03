@@ -1,2 +1,2 @@
-static NSString *accent = @"blue";
-static NSString *flavor = @"mocha";
+static NSString *pref_accent = @"blue";
+static NSString *pref_flavor = @"mocha";

@@ -125,3 +125,34 @@ static int mocha_surface0 = 0x313244;
 static int mocha_base = 0x1e1e2e;
 static int mocha_mantle = 0x181825;
 static int mocha_crust = 0x11111b;
+
+// --- CURRENT COLORS ---
+static int current_rosewater = 0xf5e0dc;
+static int current_flamingo = 0xf2cdcd;
+static int current_pink = 0xf5c2e7;
+static int current_mauve = 0xcba6f7;
+static int current_red = 0xf38ba8;
+static int current_maroon = 0xeba0ac;
+static int current_peach = 0xfab387;
+static int current_yellow = 0xf9e2af;
+static int current_green = 0xa6e3a1;
+static int current_teal = 0x94e2d5;
+static int current_sky = 0x89dceb;
+static int current_sapphire = 0x74c7ec;
+static int current_blue = 0x89b4fa;
+static int current_lavender = 0xb4befe;
+
+static int current_text = 0xcdd6f4;
+static int current_subtext1 = 0xbac2de;
+static int current_subtext0 = 0xa6adc8;
+static int current_overlay2 = 0x9399b2;
+static int current_overlay1 = 0x7f849c;
+static int current_overlay0 = 0x6c7086;
+static int current_surface2 = 0x585b70;
+static int current_surface1 = 0x45475a;
+static int current_surface0 = 0x313244;
+static int current_base = 0x1e1e2e;
+static int current_mantle = 0x181825;
+static int current_crust = 0x11111b;
+
+static int current_accent = 0x000000;

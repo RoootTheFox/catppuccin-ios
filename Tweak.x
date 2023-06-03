@@ -6,20 +6,22 @@
 #import <Tweak.h>
 
 #include "colors.h"
+#include "helper.h"
+
 // https://stackoverflow.com/a/3532264
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 // CHANGE COLORS HERE
-static int color_base = 0x1e1e2e;    // CTP base - systemBackgroundColor (background colors in general)
-static int color_mantle = 0x181825;  // CTP mantle - boxes and such
-static int color_text = 0xcdd6f4;        // CTP TEXT - labelColor
-static int color_blue = 0x89b4fa;       // CTP blue - system blue
-static int color_red = 0xf38ba8;         // CTP red - system red
-static int color_yellow = 0xf9e2af ;   // CTP yellow - system yellow + system dark yellow
-static int color_green = 0xa6e3a1 ;    // CTP green - system green
-static int color_peach = 0xfab387;  // CTP peach
+//static int current_base = 0x1e1e2e;    // CTP base - systemBackgroundColor (background colors in general)
+//static int current_mantle = 0x181825;  // CTP mantle - boxes and such
+//static int current_text = 0xcdd6f4;        // CTP TEXT - labelColor
+//static int current_blue = 0x89b4fa;       // CTP blue - system blue
+//static int current_red = 0xf38ba8;         // CTP red - system red
+//static int current_yellow = 0xf9e2af ;   // CTP yellow - system yellow + system dark yellow
+//static int current_green = 0xa6e3a1 ;    // CTP green - system green
+//static int current_peach = 0xfab387;  // CTP peach
 
-static int color_accent = 0x89b4fa;  // ACCENT COLOR
+//static int current_accent = 0x89b4fa;  // ACCENT COLOR
 
 /* ########
 
@@ -78,7 +80,7 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)greenColor {
     return %orig;
 }
-+ (id)groupTableViewBackgroundColor { return UIColorFromRGB(color_base); }
++ (id)groupTableViewBackgroundColor { return UIColorFromRGB(current_base); }
 + (id)infoTextOverPinStripeTextColor {
     return %orig;
 }
@@ -136,7 +138,7 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)secondaryLabelColor {
     return %orig;
 }
-+ (id)secondarySystemBackgroundColor { return UIColorFromRGB(color_base); }
++ (id)secondarySystemBackgroundColor { return UIColorFromRGB(current_base); }
 + (id)secondarySystemFillColor {
     return %orig;
 }
@@ -252,7 +254,7 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)systemGrayTintColor {
     return %orig;
 }
-+ (id)systemGroupedBackgroundColor { return UIColorFromRGB(color_base); }
++ (id)systemGroupedBackgroundColor { return UIColorFromRGB(current_base); }
 + (id)systemIndigoColor {
     return %orig;
 }
@@ -274,7 +276,7 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)systemMidGrayTintColor {
     return %orig;
 }
-+ (id)systemOrangeColor { return UIColorFromRGB(color_peach); }
++ (id)systemOrangeColor { return UIColorFromRGB(current_peach); }
 + (id)systemPinkColor {
     return %orig;
 }
@@ -284,9 +286,9 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)systemTealColor {
     return %orig;
 }
-+ (id)systemWhiteColor { return UIColorFromRGB(color_base); }
++ (id)systemWhiteColor { return UIColorFromRGB(current_base); }
 // used in TrollStore for example
-+ (id)tableBackgroundColor { return UIColorFromRGB(color_base); }
++ (id)tableBackgroundColor { return UIColorFromRGB(current_base); }
 + (id)tableCellBackgroundColor {
     return %orig;
 }
@@ -305,7 +307,7 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)tableCellGrayTextColor {
     return %orig;
 }
-+ (id)tableCellGroupedBackgroundColor { return UIColorFromRGB(color_mantle); }
++ (id)tableCellGroupedBackgroundColor { return UIColorFromRGB(current_mantle); }
 + (id)tableCellGroupedBackgroundColorLegacyWhite {
     return %orig;
 }
@@ -316,8 +318,8 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
     return %orig;
 }
 // used in trollstore (app list bg)
-+ (id)tableCellPlainBackgroundColor { return UIColorFromRGB(color_base); }
-+ (id)tableCellPlainSelectedBackgroundColor { return UIColorFromRGB(color_accent); }
++ (id)tableCellPlainBackgroundColor { return UIColorFromRGB(current_base); }
++ (id)tableCellPlainSelectedBackgroundColor { return UIColorFromRGB(current_accent); }
 + (id)tableCellValue1BlueColor {
     return %orig;
 }
@@ -367,7 +369,7 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
     return %orig;
 }
 // seems to be textbox backgrounds, crust or mantle it is
-+ (id)tertiarySystemFillColor { return UIColorFromRGB(color_mantle); }
++ (id)tertiarySystemFillColor { return UIColorFromRGB(current_mantle); }
 + (id)tertiarySystemGroupedBackgroundColor {
     return %orig;
 }
@@ -449,23 +451,28 @@ static int color_accent = 0x89b4fa;  // ACCENT COLOR
 + (id)pk_toolTintColor {
     return %orig;
 }
-+ (id)labelColor { return UIColorFromRGB(color_text); }
-+ (id)systemBackgroundColor { return UIColorFromRGB(color_base); }
-+ (id)systemBlueColor { return UIColorFromRGB(color_blue); }
++ (id)labelColor { return UIColorFromRGB(current_text); }
++ (id)systemBackgroundColor { return UIColorFromRGB(current_base); }
++ (id)systemBlueColor { return UIColorFromRGB(current_blue); }
 + (id)systemDarkYellowColor {
     return %orig;
 }
-+ (id)systemGreenColor { return UIColorFromRGB(color_green); }
-+ (id)systemRedColor { return UIColorFromRGB(color_red); }
-+ (id)systemYellowColor { return UIColorFromRGB(color_yellow); }
++ (id)systemGreenColor { return UIColorFromRGB(current_green); }
++ (id)systemRedColor { return UIColorFromRGB(current_red); }
++ (id)systemYellowColor { return UIColorFromRGB(current_yellow); }
 %end
 
 static void loadPreferences() {
+    NSLog(@"ctpios -- loadPreferences");
 	NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"com.catppuccin.ios.preferences"];
 	if (preferences) {
-        flavor = [[preferences objectForKey:@"flavor"] stringValue];
-        accent = [[preferences objectForKey:@"accent"] stringValue];
+        pref_flavor = [[preferences objectForKey:@"flavor"] stringValue];
+        pref_accent = [[preferences objectForKey:@"accent"] stringValue];
     }
+
+    NSLog(@"ctpios -- flavor %@ accent %@", pref_flavor, pref_accent);
+
+    [Helper updateColors];
 }
 
 %ctor {
