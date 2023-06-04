@@ -334,7 +334,7 @@
 + (id)tableSelectionGradientStartColor {
     return %orig;
 }
-+ (id)tableSeparatorColor {
++ (id)tableSeparatorColor { // item separator lines in settings app
     return %orig;
 }
 + (id)tableSeparatorDarkColor {
@@ -347,7 +347,7 @@
     return %orig;
 }
 + (id)tertiaryLabelColor { //outlines for icons in settings app, might be more
-    return %orig;
+    return UIColorFromRGB(current_overlay2); // overlay2 or subtext0?
 }
 + (id)tertiarySystemBackgroundColor { // note
     return %orig;
