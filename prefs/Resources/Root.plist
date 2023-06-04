@@ -38,14 +38,12 @@
 			<key>PostNotification</key>
 			<string>com.catppuccin.ios.preferences/reload</string>
 		</dict>
-
     <dict>
       <key>cell</key>
       <string>PSGroupCell</string>
       <key>label</key>
       <string></string>
     </dict>
-
 		<dict>
 			<key>cell</key>
 			<string>PSLinkListCell</string>
@@ -65,15 +63,15 @@
 				<string>flamingo</string>
 				<string>pink</string>
 				<string>mauve</string>
-        <string>red</string>
+				<string>red</string>
 				<string>maroon</string>
 				<string>peach</string>
 				<string>yellow</string>
-        <string>green</string>
+				<string>green</string>
 				<string>teal</string>
 				<string>sapphire</string>
 				<string>blue</string>
-        <string>lavender</string>
+				<string>lavender</string>
 			</array>
 			<key>validTitles</key>
 			<array>
@@ -81,20 +79,19 @@
 				<string>Flamingo</string>
 				<string>Pink</string>
 				<string>Mauve</string>
-        <string>Red</string>
+				<string>Red</string>
 				<string>Maroon</string>
 				<string>Peach</string>
 				<string>Yellow</string>
-        <string>Green</string>
+				<string>Green</string>
 				<string>Teal</string>
 				<string>Sapphire</string>
 				<string>Blue</string>
-        <string>Lavender</string>
+				<string>Lavender</string>
 			</array>
 			<key>PostNotification</key>
 			<string>com.catppuccin.ios.preferences/reload</string>
 		</dict>
-
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
