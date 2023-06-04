@@ -11,26 +11,14 @@
 // https://stackoverflow.com/a/3532264
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-// CHANGE COLORS HERE
-//static int current_base = 0x1e1e2e;    // CTP base - systemBackgroundColor (background colors in general)
-//static int current_mantle = 0x181825;  // CTP mantle - boxes and such
-//static int current_text = 0xcdd6f4;        // CTP TEXT - labelColor
-//static int current_blue = 0x89b4fa;       // CTP blue - system blue
-//static int current_red = 0xf38ba8;         // CTP red - system red
-//static int current_yellow = 0xf9e2af ;   // CTP yellow - system yellow + system dark yellow
-//static int current_green = 0xa6e3a1 ;    // CTP green - system green
-//static int current_peach = 0xfab387;  // CTP peach
-
-//static int current_accent = 0x89b4fa;  // ACCENT COLOR
-
-/* ########
-
-{
-
-    return %orig;
-}
-
-*/
+// ctp base - systemBackgroundColor (and background colors in general)
+// ctp mantle - boxes and such
+// ctp text - labelColor
+// ctp blue - system blue
+// ctp red - system red
+// ctp yellow - system yellow + system dark yellow
+// ctp green - system green
+// ctp peach
 
 %hook UIColor
 /*+ (id)_systemChromeShadowColor {
