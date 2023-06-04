@@ -466,8 +466,8 @@ static void loadPreferences() {
     NSLog(@"ctpios -- loadPreferences");
 	NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"com.catppuccin.ios.preferences"];
 	if (preferences) {
-        pref_flavor = [[preferences objectForKey:@"flavor"] stringValue];
-        pref_accent = [[preferences objectForKey:@"accent"] stringValue];
+        pref_flavor = [preferences objectForKey:@"flavor"];
+        pref_accent = [preferences objectForKey:@"accent"];
     }
 
     NSLog(@"ctpios -- flavor %@ accent %@", pref_flavor, pref_accent);
