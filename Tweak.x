@@ -425,7 +425,7 @@
 }
 + (id)labelColor { return UIColorFromRGB(current_text); }
 + (id)systemBackgroundColor { return UIColorFromRGB(current_base); }
-+ (id)systemBlueColor { return UIColorFromRGB(current_blue); }
++ (id)systemBlueColor { return UIColorFromRGB(current_accent); } /* todo: find a better way to change the main accent than this */
 + (id)systemDarkYellowColor {
     return %orig;
 }

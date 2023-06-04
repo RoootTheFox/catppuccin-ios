@@ -10,6 +10,7 @@
 @interface Helper : NSObject {}
 
 + (NSArray *)flavors;
++ (NSArray *)accents;
 + (void) updateColors; // call this **AFTER** loading/changing preferences
 
 @end
@@ -27,15 +28,40 @@
     return _flavors;
 }
 
++ (NSArray *)accents {
+    static NSArray *_accents;
+
+    if (_accents == nil) {
+        _accents = [[NSArray alloc] initWithObjects:
+        @"rosewater",
+        @"flamingo",
+        @"pink",
+        @"mauve",
+        @"red",
+        @"maroon",
+        @"peach",
+        @"yellow",
+        @"green",
+        @"teal",
+        @"sapphire",
+        @"blue",
+        @"lavender",
+        nil];
+    }
+
+    return _accents;
+}
+
 +(void) updateColors {
     NSLog(@"ctpios -- updateColors");
 
-    int i = [[Helper flavors] indexOfObject:pref_flavor];
+    int flavor_index = [[Helper flavors] indexOfObject:pref_flavor];
+    int accent_index = [[Helper accents] indexOfObject:pref_accent];
 
     // static NSString *pref_accent = @"blue";
     // static NSString *pref_flavor = @"mocha";
 
-    switch (i) {
+    switch (flavor_index) {
         case 0: // latte
             NSLog(@"ctpios -- updateColors switch LATTE");
             current_rosewater = latte_rosewater;
@@ -158,6 +184,48 @@
             break;
     }
 
+    switch (accent_index) {
+        case 0: // rosewater
+            current_accent = current_rosewater;
+            break;
+        case 1: // flamingo
+            current_accent = current_flamingo;
+            break;
+        case 2: // pink
+            current_accent = current_pink;
+            break;
+        case 3: // mauve
+            current_accent = current_mauve;
+            break;
+        case 4: // red
+            current_accent = current_red;
+            break;
+        case 5: // maroon
+            current_accent = current_maroon;
+            break;
+        case 6: // peach
+            current_accent = current_peach;
+            break;
+        case 7: // yellow
+            current_accent = current_yellow;
+            break;
+        case 8: // green
+            current_accent = current_green;
+            break;
+        case 9: // teal
+            current_accent = current_teal;
+            break;
+        case 10: // sapphire
+            current_accent = current_sapphire;
+            break;
+        case 11: // blue
+            current_accent = current_blue;
+            break;
+        case 12: // lavender
+            current_accent = current_lavender;
+            break;
+    }
+
     #ifdef AUTOMATIC_THEME_SWITCHING_BROKEN_INCREMENTAL_BUILDS
         if (@available(iOS 13, *)) {
             UISUserInterfaceStyleMode *systemStyleMode = [[UISUserInterfaceStyleMode alloc] init];
@@ -166,7 +234,7 @@
                 NSLog(@"ctpios -- updateColors processName: SpringBoard");
 
                 // if latte
-                if (i == 0) {
+                if (flavor_index == 0) {
                     NSLog(@"ctpios -- updateColors LATTE -- set light theme");
 
                     //NSLog(@"ctpios -- idk LMAO %@", [UITraitCollection currentTraitCollection]);
