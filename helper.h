@@ -1,6 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "Tweak.h"
 
+#ifdef AUTOMATIC_THEME_SWITCHING_BROKEN_INCREMENTAL_BUILDS
+    #import "headers/UISUserInterfaceStyleMode.h"
+    // what the fuck. https://github.com/xybp888/iOS-SDKs/issues/3#issuecomment-637572290
+    int __isOSVersionAtLeast(int major, int minor, int patch) { NSOperatingSystemVersion version; version.majorVersion = major; version.minorVersion = minor; version.patchVersion = patch; return [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:version]; }
+#endif
+
 @interface Helper : NSObject {}
 
 + (NSArray *)flavors;
@@ -152,7 +158,27 @@
             break;
     }
 
-    NSLog(@"ctpios -- updateColors END");
+    #ifdef AUTOMATIC_THEME_SWITCHING_BROKEN_INCREMENTAL_BUILDS
+        if (@available(iOS 13, *)) {
+            UISUserInterfaceStyleMode *systemStyleMode = [[UISUserInterfaceStyleMode alloc] init];
+
+            if ([[[NSProcessInfo processInfo] processName] isEqualToString:@"Preferences"]) {
+                NSLog(@"ctpios -- updateColors processName: SpringBoard");
+
+                // if latte
+                if (i == 0) {
+                    NSLog(@"ctpios -- updateColors LATTE -- set light theme");
+
+                    //NSLog(@"ctpios -- idk LMAO %@", [UITraitCollection currentTraitCollection]);
+                    systemStyleMode.modeValue = 1;
+                    //[[[UISUserInterfaceStyleMode alloc] init] setModeValue:2];
+                } else {
+                    NSLog(@"ctpios -- updateColors NOT LATTE -- set dark theme");
+                    systemStyleMode.modeValue = 2;
+                }
+            }
+        }
+    #endif
 }
 
 @end
