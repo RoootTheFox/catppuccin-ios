@@ -96,9 +96,7 @@
 + (id)lightTextColor {
     return %orig;
 }
-+ (id)linkColor {
-    return %orig;
-}
++ (id)linkColor { return UIColorFromRGB(current_accent); }
 + (id)magentaColor {
     return %orig;
 }
@@ -117,9 +115,7 @@
 + (id)pinStripeColor {
     return %orig;
 }
-+ (id)placeholderTextColor {
-    return %orig;
-}
++ (id)placeholderTextColor { return UIColorFromRGB(current_subtext0); }
 + (id)purpleColor {
     return %orig;
 }
@@ -135,9 +131,7 @@
 + (id)scrollViewTexturedBackgroundColor {
     return %orig;
 }
-+ (id)secondaryLabelColor {
-    return %orig;
-}
++ (id)secondaryLabelColor { return UIColorFromRGB(current_subtext0); }
 + (id)secondarySystemBackgroundColor { return UIColorFromRGB(current_base); }
 + (id)secondarySystemFillColor {
     return %orig;
@@ -166,9 +160,7 @@
 + (id)separatorColor {
     return %orig;
 }
-+ (id)systemBlackColor {
-    return %orig;
-}
++ (id)systemBlackColor { return UIColorFromRGB(current_overlay2); }
 + (id)systemBrownColor {
     return %orig;
 }
@@ -255,9 +247,7 @@
     return %orig;
 }
 + (id)systemGroupedBackgroundColor { return UIColorFromRGB(current_base); }
-+ (id)systemIndigoColor {
-    return %orig;
-}
++ (id)systemIndigoColor { return UIColorFromRGB(current_blue); }
 + (id)systemLightGrayColor {
     return %orig;
 }
@@ -277,15 +267,9 @@
     return %orig;
 }
 + (id)systemOrangeColor { return UIColorFromRGB(current_peach); }
-+ (id)systemPinkColor {
-    return %orig;
-}
-+ (id)systemPurpleColor {
-    return %orig;
-}
-+ (id)systemTealColor {
-    return %orig;
-}
++ (id)systemPinkColor { return UIColorFromRGB(current_pink); }
++ (id)systemPurpleColor { return UIColorFromRGB(current_mauve); }
++ (id)systemTealColor { return UIColorFromRGB(current_teal); }
 + (id)systemWhiteColor { return UIColorFromRGB(current_base); }
 // used in TrollStore for example
 + (id)tableBackgroundColor { return UIColorFromRGB(current_base); }
