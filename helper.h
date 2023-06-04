@@ -43,6 +43,7 @@
         @"yellow",
         @"green",
         @"teal",
+        @"sky",
         @"sapphire",
         @"blue",
         @"lavender",
@@ -215,13 +216,16 @@
         case 9: // teal
             current_accent = current_teal;
             break;
-        case 10: // sapphire
+        case 10: // sky
+            current_accent = current_sky;
+            break;
+        case 11: // sapphire
             current_accent = current_sapphire;
             break;
-        case 11: // blue
+        case 12: // blue
             current_accent = current_blue;
             break;
-        case 12: // lavender
+        case 13: // lavender
             current_accent = current_lavender;
             break;
     }
