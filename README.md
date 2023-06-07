@@ -1,14 +1,14 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://github.com/catppuccin/ios">iOS</a>
+	Catppuccin for <a href="https://www.apple.com/ios/">iOS</a>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
-	<a href="https://github.com/catppuccin/ios/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/ios?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/catppuccin/ios/issues"><img src="https://img.shields.io/github/issues/catppuccin/ios?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/catppuccin/ios/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/ios?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/RoootTheFox/catppuccin-ios/stargazers"><img src="https://img.shields.io/github/stars/RoootTheFox/catppuccin-ios?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/RoootTheFox/catppuccin-ios/issues"><img src="https://img.shields.io/github/issues/RoootTheFox/catppuccin-ios?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/RoootTheFox/catppuccin-ios/contributors"><img src="https://img.shields.io/github/contributors/RoootTheFox/catppuccin-ios?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
