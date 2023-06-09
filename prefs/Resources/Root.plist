@@ -94,6 +94,23 @@
 			<key>PostNotification</key>
 			<string>com.catppuccin.ios.preferences/reload</string>
 		</dict>
+
+    <dict>
+      <key>cell</key>
+      <string>PSGroupCell</string>
+      <key>label</key>
+      <string></string>
+    </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+      <key>label</key>
+      <string>Third party apps</string>
+      <key>isController</key>
+			<true />
+      <key>detail</key>
+		  <string>CatppuccinThirdPartyListController</string>
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>

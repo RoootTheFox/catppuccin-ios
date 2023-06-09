@@ -3,10 +3,10 @@ ifeq ($(THEOS_PACKAGE_SCHEME),rootless)
   export ARCHS = arm64 arm64e
 endif
 
-INSTALL_TARGET_PROCESSES = SpringBoard
+INSTALL_TARGET_PROCESSES = SpringBoard Youtube
 
 TWEAK_NAME = catppuccin
-$(TWEAK_NAME)_FILES = Tweak.x
+$(TWEAK_NAME)_FILES = Tweak.xm
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc
 $(TWEAK_NAME)_PRIVATE_FRAMEWORKS = UIKitServices
 

@@ -8,6 +8,8 @@
 #include "colors.h"
 #include "helper.h"
 
+#include "vendor/YoutubeHeader/YTCommonColorPalette.h"
+
 // https://stackoverflow.com/a/3532264
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -50,9 +52,7 @@
 + (id)darkGrayColor {
     return %orig;
 }
-+ (id)darkTextColor {
-    return %orig;
-}
++ (id)darkTextColor { return UIColorFromRGB(current_text); }
 + (id)externalSystemGreenColor {
     return %orig;
 }
@@ -81,9 +81,7 @@
 + (id)lightGrayColor {
     return %orig;
 }
-+ (id)lightTextColor {
-    return %orig;
-}
++ (id)lightTextColor { return UIColorFromRGB(current_text); }
 + (id)linkColor { return UIColorFromRGB(current_accent); }
 + (id)magentaColor {
     return %orig;
@@ -94,8 +92,8 @@
 + (id)noContentLightGradientBackgroundColor {
     return %orig;
 }
-+ (id)opaqueSeparatorColor { //appears to be the color for vertical seperator lines
-    return %orig;
++ (id)opaqueSeparatorColor {
+	return %orig;
 }
 + (id)orangeColor {
     return %orig;
@@ -107,12 +105,8 @@
 + (id)purpleColor {
     return %orig;
 }
-+ (id)quaternaryLabelColor {
-    return %orig;
-}
-+ (id)quaternarySystemFillColor {
-    return %orig;
-}
++ (id)quaternaryLabelColor { return UIColorFromRGB(current_overlay0); }
++ (id)quaternarySystemFillColor { return UIColorFromRGB(current_crust); }
 + (id)redColor {
     return %orig;
 }
@@ -121,9 +115,7 @@
 }
 + (id)secondaryLabelColor { return UIColorFromRGB(current_subtext0); }
 + (id)secondarySystemBackgroundColor { return UIColorFromRGB(current_base); }
-+ (id)secondarySystemFillColor {
-    return %orig;
-}
++ (id)secondarySystemFillColor { return UIColorFromRGB(current_mantle); }
 + (id)secondarySystemGroupedBackgroundColor {
     return %orig;
 }
@@ -146,7 +138,7 @@
     return %orig;
 }
 + (id)separatorColor {
-    return %orig;
+	return %orig;
 }
 + (id)systemBlackColor { return UIColorFromRGB(current_overlay2); }
 + (id)systemBrownColor {
@@ -209,9 +201,7 @@
 + (id)systemExtraLightGrayTintColor {
     return %orig;
 }
-+ (id)systemFillColor {
-    return %orig;
-}
++ (id)systemFillColor { return UIColorFromRGB(current_base); }
 + (id)systemGray2Color {
     return %orig;
 }
@@ -222,9 +212,7 @@
     return %orig;
 }
 // seems to be the color that appears when you hold down a button (not released though)
-+ (id)systemGray5Color {
-    return %orig;
-}
++ (id)systemGray5Color { return UIColorFromRGB(current_accent); }
 + (id)systemGray6Color {
     return %orig;
 }
@@ -337,11 +325,9 @@
 + (id)tertiaryLabelColor { //outlines for icons in settings app, might be more
     return UIColorFromRGB(current_overlay2); // overlay2 or subtext0?
 }
-+ (id)tertiarySystemBackgroundColor { // note
-    return %orig;
-}
++ (id)tertiarySystemBackgroundColor { return UIColorFromRGB(current_crust); }
 // seems to be textbox backgrounds, crust or mantle it is
-+ (id)tertiarySystemFillColor { return UIColorFromRGB(current_mantle); }
++ (id)tertiarySystemFillColor { return UIColorFromRGB(current_crust); }
 + (id)tertiarySystemGroupedBackgroundColor {
     return %orig;
 }
@@ -434,15 +420,63 @@
 + (id)systemYellowColor { return UIColorFromRGB(current_yellow); }
 %end
 
+%hook _UIStatusBar
+- (void)setForegroundColor:(UIColor *)arg1 { %orig(UIColorFromRGB(current_text)); }
+%end
+
+@interface _UIKBCompatInputView
+@property (nonatomic, copy, readwrite) UIColor *backgroundColor;
+@end
+%hook _UIKBCompatInputView
+- (void)didMoveToWindow { %orig; self.backgroundColor = UIColorFromRGB(current_base); }
+%end
+
+@interface _UIBackdropColorSettings
+@property (nonatomic, copy, readwrite) UIColor *color;
+@end
+%hook _UIBackdropColorSettings
+- (void)setDefaultValues { %orig; self.color = UIColorFromRGB(current_base); }
+%end
+
+
+// Youtube
+%hook YTCommonColorPalette
+- (UIColor *)background1 { if (pref_youtube) { return UIColorFromRGB(current_base); } else { return %orig; } }
+- (UIColor *)background2 { if (pref_youtube) { return UIColorFromRGB(current_mantle); } else { return %orig; } }
+- (UIColor *)background3 { if (pref_youtube) { return UIColorFromRGB(current_crust); } else { return %orig; } }
+
+- (UIColor *)textPrimary { if (pref_youtube) { return UIColorFromRGB(current_text); } else { return %orig; } }
+- (UIColor *)textSecondary { if (pref_youtube) { return UIColorFromRGB(current_subtext0); } else { return %orig; } }
+- (UIColor *)textDisabled { if (pref_youtube) { return UIColorFromRGB(current_overlay0); } else { return %orig; } }
+
+- (UIColor *)generalBackgroundA { if (pref_youtube) { return UIColorFromRGB(current_base); } else { return %orig; } }
+- (UIColor *)generalBackgroundB { if (pref_youtube) { return UIColorFromRGB(current_mantle); } else { return %orig; } }
+- (UIColor *)generalBackgroundC { if (pref_youtube) { return UIColorFromRGB(current_crust); } else { return %orig; } }
+
+- (UIColor *)brandBackgroundSolid { if (pref_youtube) { return UIColorFromRGB(current_mantle); } else { return %orig; }}
+
+- (UIColor *)menuBackground { if (pref_youtube) { return UIColorFromRGB(current_mantle); } else { return %orig; } }
+- (UIColor *)baseBackground { if (pref_youtube) { return UIColorFromRGB(current_base); } else { return %orig; } }
+
+- (UIColor *)outline { if (pref_youtube) { return UIColorFromRGB(current_text); } else { return %orig; } }
+
+- (UIColor *)themedBlue { if (pref_youtube) { return UIColorFromRGB(current_blue); } else { return %orig; } }
+- (UIColor *)themedGreen { if (pref_youtube) { return UIColorFromRGB(current_green); } else { return %orig; } }
+
+- (UIColor *)staticBrandRed { if (pref_youtube) { return UIColorFromRGB(current_red); } else { return %orig; } }
+- (UIColor *)staticBrandWhite { if (pref_youtube) { return UIColorFromRGB(current_text); } else { return %orig; } }
+- (UIColor *)staticBrandBlack { if (pref_youtube) { return UIColorFromRGB(current_base); } else { return %orig; } }
+- (UIColor *)staticAdYellow { if (pref_youtube) { return UIColorFromRGB(current_yellow); } else { return %orig; } }
+- (UIColor *)staticGrey { if (pref_youtube) { return UIColorFromRGB(current_overlay0); } else { return %orig; } }
+%end
+
 static void loadPreferences() {
-    NSLog(@"ctpios -- loadPreferences");
 	NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"com.catppuccin.ios.preferences"];
 	if (preferences) {
         pref_flavor = [preferences objectForKey:@"flavor"];
         pref_accent = [preferences objectForKey:@"accent"];
+		pref_youtube = [[preferences objectForKey:@"youtube"] boolValue];
     }
-
-    NSLog(@"ctpios -- flavor %@ accent %@", pref_flavor, pref_accent);
 
     [Helper updateColors];
 }
