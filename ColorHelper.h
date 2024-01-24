@@ -97,6 +97,10 @@ static int ACCENT = BLUE;
         UIColorFromRGB(0x737994),
         UIColorFromRGB(0x626880),
         UIColorFromRGB(0x51576d),
+        UIColorFromRGB(0x414559),
+        UIColorFromRGB(0x303446),
+        UIColorFromRGB(0x292c3c),
+        UIColorFromRGB(0x232634),
         nil];
 }
 
