@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>items</key>
+        <array>
+            <dict>
+                <key>cell</key>
+                <string>PSSwitchCell</string>
+                <key>label</key>
+                <string>YouTube</string>
+                <key>default</key>
+                <false />
+                <key>defaults</key>
+                <string>com.catppuccin.ios.preferences</string>
+                <key>key</key>
+                <string>youtube</string>
+                <key>icon</key>
+                <string>youtube.png</string>
+                <key>PostNotification</key>
+                <string>com.catppuccin.ios.preferences/reload</string>
+            </dict>
+
+            <dict>
+                <key>cell</key>
+                <string>PSSwitchCell</string>
+                <key>label</key>
+                <string>Reddit</string>
+                <key>default</key>
+                <false />
+                <key>defaults</key>
+                <string>com.catppuccin.ios.preferences</string>
+                <key>key</key>
+                <string>reddit</string>
+                <key>icon</key>
+                <string>reddit.png</string>
+                <key>PostNotification</key>
+                <string>com.catppuccin.ios.preferences/reload</string>
+            </dict>
+
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>footerText</key>
+                <string>Made with ❤️ by Echo and Rooot</string>
+                <key>footerAlignment</key>
+                <real>1</real>
+            </dict>
+        </array>
+
+        <key>title</key>
+        <string>Third Party Apps</string>
+    </dict>
+</plist>

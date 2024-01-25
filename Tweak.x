@@ -1,3 +1,7 @@
+#import <Foundation/Foundation.h>
+#import <Foundation/NSUserDefaults+Private.h>
+#import <rootless.h>
+
 #import <UIKit/UIKit.h>
 #import <UIKit/UIColor.h>
 #import <Tweak.h>
@@ -6,8 +10,39 @@
 #import "ColorHelper.h"
 
 // include generated hooks file
+%group SystemUI
 @custom_include "generated.x"
+%end
+
+static void loadPreferences() {
+    BOOL isSystem = [NSHomeDirectory() isEqualToString:@"/var/mobile"];
+
+    NSDictionary *preferences = nil;
+
+    if (isSystem) {
+        CFArrayRef keyList = CFPreferencesCopyKeyList((CFSTR("com.catppuccin.ios.preferences")), kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+        if (keyList) {
+            preferences = CFBridgingRelease(CFPreferencesCopyMultiple(keyList, CFSTR("com.catppuccin.ios.preferences"), kCFPreferencesCurrentUser, kCFPreferencesAnyHost));
+            if (!preferences) preferences = [NSDictionary new];
+            CFRelease(keyList);
+        }
+    }
+
+    if (!preferences) preferences = [NSDictionary dictionaryWithContentsOfFile:ROOT_PATH_NS(@"/var/mobile/Library/Preferences/com.catppuccin.ios.preferences.plist")];
+
+    if (preferences) {
+        Flavor = [preferences objectForKey:@"flavor"];
+        Accent = [preferences objectForKey:@"accent"];
+        //BOOL YouTube = [[preferences objectForKey:@"youtube"] boolValue];
+        //BOOL Reddit = [[preferences objectForKey:@"reddit"] boolValue];
+    }
+
+    [ColorHelper updateColors];
+}
 
 %ctor {
-	[ColorHelper updateColors];
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPreferences, CFSTR("com.catppuccin.ios.preferences/reload"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+    loadPreferences();
+
+    %init(SystemUI);
 }

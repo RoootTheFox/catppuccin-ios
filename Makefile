@@ -10,10 +10,13 @@ endif
 
 INSTALL_TARGET_PROCESSES = SpringBoard
 
-TWEAK_NAME = catppuccin
+TWEAK_NAME = Catppuccin
 $(TWEAK_NAME)_FILES = .gen_Tweak.x
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc
 $(TWEAK_NAME)_PRIVATE_FRAMEWORKS = UIKitServices
 
+SUBPROJECTS += prefs
+
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
+include $(THEOS_MAKE_PATH)/aggregate.mk

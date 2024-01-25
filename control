@@ -1,4 +1,4 @@
-Package: gay.rooot.catppuccin
+Package: com.catppuccin.ios
 Name: Catppuccin
 Version: 0.0.1
 Architecture: iphoneos-arm
@@ -6,4 +6,4 @@ Description: Soothing pastel theme for iOS
 Maintainer: rooot <hey@rooot.gay>
 Author: rooot
 Section: Tweaks
-Depends: mobilesubstrate
+Depends: mobilesubstrate, preferenceloader

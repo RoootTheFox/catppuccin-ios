@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>items</key>
+        <array>
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>label</key>
+                <string>Flavor</string>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSSegmentCell</string>
+                <key>default</key>
+                <string>mocha</string>
+                <key>defaults</key>
+                <string>com.catppuccin.ios.preferences</string>
+                <key>key</key>
+                <string>flavor</string>
+                <key>validValues</key>
+                <array>
+                    <string>latte</string>
+                    <string>frappe</string>
+                    <string>macchiato</string>
+                    <string>mocha</string>
+                </array>
+                <key>validTitles</key>
+                <array>
+                    <string>Latte</string>
+                    <string>Frappé</string>
+                    <string>Macchiato</string>
+                    <string>Mocha</string>
+                </array>
+                <key>alignment</key>
+                <string>1</string>
+                <key>PostNotification</key>
+                <string>com.catppuccin.ios.preferences/reload</string>
+            </dict>
+
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>label</key>
+                <string></string>
+            </dict>
+
+            <dict>
+                <key>cell</key>
+                <string>PSLinkCell</string>
+                <key>label</key>
+                <string>Third Party Apps</string>
+                <key>isController</key>
+                <true />
+                <key>detail</key>
+                <string>CatppuccinThirdPartyListController</string>
+            </dict>
+
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>footerText</key>
+                <string>Made with ❤️ by Echo and Rooot</string>
+                <key>footerAlignment</key>
+                <real>1</real>
+            </dict>
+        </array>
+
+        <key>title</key>
+        <string>Catppuccin</string>
+    </dict>
+</plist>
