@@ -1,5 +1,5 @@
 %hook UIColor
-+(id)selectionGrabberColor { return colors[SKY]; }
++(id)selectionGrabberColor { return colors[ACCENT]; }
 +(id)systemExtraLightGrayColor { return colors[TEXT]; }
 +(id)systemDarkMidGrayColor { return colors[OVERLAY1]; }
 +(id)tablePlainHeaderFooterBackgroundColor { return colors[SURFACE1]; }
@@ -19,7 +19,7 @@
 +(id)systemIndigoColor { return colors[BLUE]; }
 +(id)systemDarkPurpleColor { return colors[LAVENDER]; }
 +(id)linkColor { return colors[ACCENT]; }
-+(id)selectionHighlightColor { return colors[BLUE]; }
++(id)selectionHighlightColor { return [colors[ACCENT] colorWithAlphaComponent:0.2]; }
 +(id)sectionListBorderColor { return colors[OVERLAY1]; }
 +(id)systemGrayColor { return colors[OVERLAY1]; }
 +(id)tableBackgroundColor { return colors[BASE]; }
