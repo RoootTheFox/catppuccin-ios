@@ -28,6 +28,14 @@
     %orig(filtered);
 }
 %end
+
+%hook UIButton
+-(id)_setupBackgroundView {
+    id res = %orig;
+    [self setTitleColor:colors[CRUST] forState:UIControlStateNormal];
+    return res;
+}
+%end
 %end
 
 static void loadPreferences() {
