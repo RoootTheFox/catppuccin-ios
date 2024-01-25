@@ -13,6 +13,11 @@
 %group SystemUI
 @custom_include "generated.x"
 
+%hook UIColor
++ (id)_systemBlueColor2 { return colors[ACCENT]; }
++ (id)_systemInteractionTintColor { return colors[ACCENT]; }
+%end
+
 %hook _UIVisualEffectBackdropView
 -(void)setFilters:(NSArray *)arg1 {
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id object, NSDictionary *bindings) {
