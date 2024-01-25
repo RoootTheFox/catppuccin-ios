@@ -77,7 +77,6 @@
 +(id)tableCellBackgroundColor { return colors[TEXT]; }
 +(id)tableCellGroupedBackgroundColorLegacyWhite { return colors[TEXT]; }
 +(id)systemWhiteColor { return colors[TEXT]; }
-+(id)whiteColor { return colors[TEXT]; }
 +(id)tableCellHighlightedBackgroundColor { return colors[TEXT]; }
 +(id)tableCellFocusedBackgroundColor { return colors[TEXT]; }
 +(id)tableCellDisabledBackgroundColor { return colors[TEXT]; }
