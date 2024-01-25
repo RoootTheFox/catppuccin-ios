@@ -12,6 +12,17 @@
 // include generated hooks file
 %group SystemUI
 @custom_include "generated.x"
+
+%hook _UIVisualEffectBackdropView
+-(void)setFilters:(NSArray *)arg1 {
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id object, NSDictionary *bindings) {
+        return [[object filterType] isEqualToString:@"gaussianBlur"];
+    }];
+    NSArray *filtered = [arg1 filteredArrayUsingPredicate:predicate];
+    self.backgroundColor = [colors[BASE] colorWithAlphaComponent:0.5];
+    %orig(filtered);
+}
+%end
 %end
 
 static void loadPreferences() {
